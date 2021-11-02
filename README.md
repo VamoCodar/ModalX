@@ -1,7 +1,6 @@
 # ModalX
 
-Modal reutilizavel criado do zero
-
+Reusable modal created from scratch
 
 ## Installation
 
@@ -13,15 +12,15 @@ optional, edit on modal.scss<br>
 
 ## Structure
 ```html
-<div class="modal" data-position="center">
-	
-	<section class="modal--content" data-id="1">
-		<!-- your content -->
-	</section>
+<div class="modal" data-position="center">	
 
-    <section class="modal--content" data-id="2">
+<section class="modal--content" data-id="1">
 		<!-- your content -->
-	</section>
+ </section>
+
+ <section class="modal--content" data-id="2">
+		<!-- your content -->
+</section>
 
 </div>
 
@@ -48,7 +47,7 @@ modal1.init()
 ```js
 // Options  with default
 ModalX('.modal', {
-    deep: false, 
+ deep: false, 
 	zIndex: 10000,
 	zIndexDeep:900,
 	closeOnSwipe: false, //Hammer.js for enable gestures
@@ -61,7 +60,7 @@ ModalX('.modal', {
 ## Methods
 
 ```js
-moddal1.openModal(),
+modal1.openModal(),
 modal1.closeModal(),
 modal1.toggleModal(),
 modal1.init()
