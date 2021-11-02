@@ -51,7 +51,6 @@ function ModalX(el, opts) {
 
 
 	function openModal(item) { //OPEN
-		if (state.open === true) { return }
 		const elemento = typeof item === "object"
 		const id = elemento ? item.dataset.id : item
 		changeIDActive(id)
@@ -66,6 +65,8 @@ function ModalX(el, opts) {
 		actualSectionActive && actualSectionActive.classList.add(classActive)
 		state.id_active = id
 		elModal.dataset.active = state.id_active
+		state.open = true
+
 		return this
 	}
 
@@ -83,6 +84,7 @@ function ModalX(el, opts) {
 		state.id_active = ''
 		elModal.dataset.active = state.id_active
 		state.open = false
+		
 		return this
 	}
 
