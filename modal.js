@@ -13,6 +13,7 @@ function ModalX(el, opts) {
 		// zIndexDeep:900
 		// closeOnSwipe: true,
 		// observer: true,
+		// bgMOdal : white
 	}
 
 	//els
@@ -25,8 +26,7 @@ function ModalX(el, opts) {
 		id_active: ""
 	}
 
-	const changeTheState = (id) => {
-		state.open = !state.open
+	const changeIDActive = (id) => {
 		state.id_active = id
 
 	}
@@ -51,9 +51,10 @@ function ModalX(el, opts) {
 
 
 	function openModal(item) { //OPEN
+		if (state.open === true) { return }
 		const elemento = typeof item === "object"
 		const id = elemento ? item.dataset.id : item
-		changeTheState(id)
+		changeIDActive(id)
 
 		const actualSectionActive = elModal.querySelector(`section[data-id="${state.id_active}"]`)
 
@@ -71,9 +72,7 @@ function ModalX(el, opts) {
 
 
 	function closeModal() { // CLOSE
-		if (state.open === false) { return }
-
-		changeTheState("")
+		changeIDActive("")
 
 		body.classList.remove(`${classOpen}-${ElNotPoint}`)
 
@@ -83,7 +82,7 @@ function ModalX(el, opts) {
 
 		state.id_active = ''
 		elModal.dataset.active = state.id_active
-
+		state.open = false
 		return this
 	}
 
@@ -104,11 +103,12 @@ function ModalX(el, opts) {
 	}
 
 	async function hammerFeature() { // HAMMER
-		const hammerLink = "https://hammerjs.github.io/dist/hammer.min.js"
-		const temHammer = Array.from(document.scripts).filter(e => e.src === hammerLink).length
-
-		if (temHammer) { return }
 		if (options.closeOnSwipe) {
+
+			const hammerLink = "https://hammerjs.github.io/dist/hammer.min.js"
+			const temHammer = Array.from(document.scripts).filter(e => e.src === hammerLink).length === 1
+			if (temHammer) { return }
+
 			// if (Hammer) return
 			const lado = () => {
 				const l = elModal.dataset.position
@@ -121,7 +121,7 @@ function ModalX(el, opts) {
 			}
 
 
-			createElementAndAppend("script", "")
+			createElementAndAppend("script", hammerLink)
 
 			await new Promise(resolve => {
 				const interval = setInterval(() => {

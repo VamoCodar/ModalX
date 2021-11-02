@@ -170,8 +170,6 @@
 }
 
 
-@include ModalX("modal");
-
 @include ModalX("modal-x") {
 	background: rgb(159, 165, 182);
 
@@ -181,5 +179,7 @@
 	}
 }
 
+
+@include ModalX("modal");
 @include ModalX("modal-x2");
 @include ModalX("modal-x3");

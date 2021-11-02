@@ -62,7 +62,7 @@
 	</div>
 	<div class="btns">
 		<button data-id="2" data-xopen="modal-x2">OPEN MODAL DATA 2</button>
-		<button data-id="2" data-xclose="modal-x2">CLOSE MODAL DATA 2</button>
+		<button data-xclose="modal-x2">CLOSE MODAL DATA 2</button>
 		<button data-id="2" data-xtoggle="modal-x2">TOGGLE MODAL DATA 2 ID2</button>
 
 	</div>
@@ -72,7 +72,7 @@
 
 	<!-- usando direto no onClick -->
 	<!-- <button data-id="1" onclick="modalCriar.toggleModal(this)"></button> -->
-	<div class="modal" data-position="center" data-active>
+	<div class="modal" data-position="center">
 		<section class="modal--content" data-id="1">
 			<h2>basic</h2>
 		</section>
@@ -82,7 +82,7 @@
 
 	<!-- modais  -->
 	<!-- center -->
-	<div class="modal-x" id="modal--1" data-position="center" data-active>
+	<div class="modal-x" id="modal--1" data-position="center">
 
 		<section class="modal--content" data-id="1">
 			<div>data 1</div>
@@ -95,7 +95,8 @@
 	</div>
 
 	<!-- right -->
-	<div class="modal-x2" data-position="right" data-active>
+	<div class="modal-x2" data-position="right">
+
 		<section class="modal--content" data-id="1">
 			<div>data 1</div>
 			<button data-xclose="modal-x2">CLOSE MODAL </button>
@@ -112,7 +113,7 @@
 
 
 	<!-- bottom -->
-	<div class="modal-x3" data-position="bottom" data-active>
+	<div class="modal-x3" data-position="bottom">
 		<section class="modal--content" data-id="1">
 			<h1>oi</h1>
 		</section>
@@ -138,7 +139,6 @@
 		const modalX2 = ModalX('.modal-x2', {
 			zIndex: 200000,
 			closeOnSwipe: true,
-
 		}).init()
 
 
