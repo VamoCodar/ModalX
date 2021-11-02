@@ -12,7 +12,8 @@ optional, edit on modal.scss<br>
 
 ## Structure
 ```html
-<div class="modal" data-position="center">	<!-- modal element -->
+<!-- modal element -->
+<div class="modal" data-position="center">
  <section class="modal--content" data-id="1"><!-- your content --></section>
  <section class="modal--content" data-id="2">	<!-- your content --></section>
 </div>
