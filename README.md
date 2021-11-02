@@ -41,12 +41,12 @@ modal1.init()
 ```js
 // Options  with default
 ModalX('.modal', {
-deep: false, 
-zIndex: 10000,
-zIndexDeep:900,
-closeOnSwipe: false, //Hammer.js for enable gestures
-observer: false, //create oberver in modal element
-bgModal : "white"
+ deep: false, 
+ zIndex: 10000,
+ zIndexDeep:900,
+ closeOnSwipe: false, //Hammer.js for enable gestures
+ observer: false, //create oberver in modal element
+ bgModal : "white"
 })
 ```
 
